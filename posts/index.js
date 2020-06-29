@@ -5,11 +5,11 @@ const cors = require('cors');
 const axios = require('axios');
 
 const app = express();
+app.use(bodyParser.json());
 app.use(cors());
 
 const posts = {};
 
-app.use(bodyParser.json());
 app.get('/posts', (req,res) => {
         res.send(posts);
 });
@@ -34,7 +34,7 @@ app.post('/posts', async (req,res) => {
         res.status(201).send(posts[id]);
 });
 
-app.post('events', (req,res) => {
+app.post('/events', (req,res) => {
    console.log('Received Event', req.body.type);  
    
    res.send({});
