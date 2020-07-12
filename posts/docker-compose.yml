@@ -1,0 +1,5 @@
+app:
+    build:
+      context: app
+      dockerfile: /Users/ernie/Projects/projectdo 2020/Stephen_Grider_docker/Pos_Blog_React_2020/posts/DockerFile
+    
