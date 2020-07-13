@@ -1,9 +1,10 @@
 import React from 'react';
+// import axios from 'axios';
 
 interface PreComments {
-    id: string;
-    content: string;
-    status: string;
+      id: string;
+      content: string;
+      status: string;  
 }
 
 interface CommentListProps {
@@ -11,31 +12,50 @@ interface CommentListProps {
 }
 
 export const CommentList: React.FC<CommentListProps> = ({ comments }) => {
+        // const [comments, setComments] = useState([]);
 
-    const renderedComments = comments.map(comment => {
-            let content = comment.content;
+        // const fetchData = async () => {
+        //     const res = await axios.get(`http://localhost:4001/posts/${postId}/comments`, {
+        //           comments  
+        //     });
 
-            if(comment.status === 'rejected'){
-                content = 'This comment has been rejected'
+        //     setComments(res.data)
+        // };
+
+        // useEffect(() => {
+        //         fetchData();
+        // }, []);
+
+        const renderedComments = comments.map(comment => {
+            let content;
+
+            if (comment.status === 'approved'){
+                content = comment.content;
             }
 
             if (comment.status === 'pending'){
-                content = 'This comment is awaiting port for mederation';
+                content = 'This comment is awaiting moderation';
+            }
+
+            if (comment.status === 'rejected'){
+                content = 'This comment has been rejected';
             }
             return(
-                <li
+                
+                    <li
                     key={comment.id}
-                >
-                    {content}
-                </li>
+                    >
+                        {content}
+                    </li>
+               
             )
-    });
+        });
 
-    return(
-        <>
-            <ul>
-                {renderedComments}
-            </ul>
-        </>
-    )
-}
+        return(
+           
+                <ul>
+                    {renderedComments}
+                </ul>
+            
+        );
+};
