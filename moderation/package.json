@@ -13,6 +13,7 @@
     "@types/mongoose": "^5.7.32",
     "axios": "^0.19.2",
     "express": "^4.17.1",
-    "nodemon": "^2.0.4"
+    "nodemon": "^2.0.4",
+    "typescript": "^3.9.7"
   }
 }
