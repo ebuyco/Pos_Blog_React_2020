@@ -1,4 +1,4 @@
-const express = require('express');
+import express, { Request, Response } from 'express';
 const bodyParser = require('body-parser');
 const axios = require('axios');
 
@@ -8,7 +8,7 @@ const app = express();
 app.use(bodyParser.json());
 
 
-app.post('/events', async (req,res) => {
+app.post('/events', async (req: Request,res: Response) => {
         const { type, data } = req.body;
 
         if(type === 'CommentCreated'){

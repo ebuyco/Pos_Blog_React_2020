@@ -1,4 +1,4 @@
-const express = require('express');
+import express, { Request, Response } from 'express';
 const bodyParser = require('body-parser');
 const { randomBytes } =require('crypto');
 const cors = require('cors');
@@ -10,11 +10,11 @@ app.use(cors());
 
 const posts = {};
 
-app.get('/posts', (req,res) => {
+app.get('/posts', (req: Request,res: Response) => {
         res.send(posts);
 });
 
-app.post('/posts', async (req,res) => {
+app.post('/posts', async (req: Request,res: Response) => {
         const id = randomBytes(4).toString('hex');
         const { title } = req.body;
 
@@ -34,7 +34,7 @@ app.post('/posts', async (req,res) => {
         res.status(201).send(posts[id]);
 });
 
-app.post('/events', (req,res) => {
+app.post('/events', (req: Request,res: Response) => {
    console.log('Received Event', req.body.type);  
    
    res.send({});

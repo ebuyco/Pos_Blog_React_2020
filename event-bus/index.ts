@@ -1,4 +1,4 @@
-const express = require('express');
+import express, { Request, Response } from 'express';
 const bodyParser = require('body-parser');
 const axios = require('axios');
 
@@ -8,7 +8,7 @@ app.use(bodyParser.json());
 
 const events = [];
 
-app.post('/events', (req,res) => {
+app.post('/events', (req: Request,res: Response) => {
         const event = req.body;
 
         events.push(event);
