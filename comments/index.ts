@@ -4,11 +4,13 @@ const { randomBytes } = require('crypto');
 const cors = require('cors');
 const axios = require('axios');
 
+
 const app = express();
 app.use(bodyParser.json());
 app.use(cors());
 
-const commentsByPostId = {};
+const commentsByPostId: any = {};
+
 
 app.get('/posts/:id/comments', (req: Request,res: Response) => {
         res.send(commentsByPostId[req.params.id] || []);
@@ -48,7 +50,7 @@ app.post('/events', async (req,res) => {
 
             const comments = commentsByPostId[postId];
 
-            const comment = comments.find(comment => {
+            const comment = comments.find((comment:any) => {
                   return comment.id === id;   
             });
             comment.status = status;

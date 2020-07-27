@@ -4,7 +4,7 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "start": "nodemon index.js"
+    "start": "ts-node-dev index.ts"
   },
   "dependencies": {
     "@types/cookie-session": "^2.0.41",

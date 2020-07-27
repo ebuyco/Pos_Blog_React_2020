@@ -8,9 +8,9 @@ app.use(bodyParser.json());
 app.use(cors());
 
 
-const posts = {};
+const posts: any = {};
 
-const handleEvent = (type, data) => {
+const handleEvent = (type: any, data: any) => {
     if (type === 'PostCreated'){
         const { id, title } = data;
 
@@ -28,7 +28,7 @@ const handleEvent = (type, data) => {
         const {id, content, postId, status } = data;
 
         const post = posts[postId];
-        const comment = post.comments.find(comment => {
+        const comment = post.comments.find((comment: any) => {
             return comment.id === id;
         });
 
