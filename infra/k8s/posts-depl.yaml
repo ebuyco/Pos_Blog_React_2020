@@ -6,12 +6,12 @@ spec:
   replicas: 1
   selector:
     matchLabels:
-      app: posts 
+      app: posts
   template:
     metadata:
       labels:
         app: posts
     spec:
-       containers:
-         - name: posts
-           image: ebuyco/posts:0.0.1           
+      containers:
+        - name: posts
+          image: ebuyco/posts
