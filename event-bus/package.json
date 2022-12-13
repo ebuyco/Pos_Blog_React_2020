@@ -12,7 +12,7 @@
     "@types/jsonwebtoken": "^8.5.0",
     "@types/mongoose": "^5.7.32",
     "axios": "^0.19.2",
-    "express": "^4.17.1",
+    "express": "^4.17.3",
     "nodemon": "^2.0.4",
     "ts-node-dev": "^1.0.0-pre.56",
     "typescript": "^3.9.7"
